@@ -7,8 +7,8 @@ const itemsReducer = (state={}, action) => {
         case RECEIVE_ONE_POKEMON:
             nextState = action.payload.items;
             return nextState;
-    default:
-        return state;
+        default:
+            return state;
     }
 }
 

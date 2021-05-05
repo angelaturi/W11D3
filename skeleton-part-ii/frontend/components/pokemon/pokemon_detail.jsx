@@ -1,9 +1,19 @@
 import React from 'react';
-import Item from './../components/pokemon_items/item';
+import Item from './../pokemon_items/item';
 
 class PokemonDetail extends React.Component{
     constructor(props){
         super(props);
+    }
+
+    componentDidMount(){
+        this.props.requestOnePokemon(this.props.match.params.pokemonId)
+    }
+
+    componentDidUpdate(prevProps){
+        if (prevProps.match.params.pokemonId !== this.props.match.params.pokemonId) {
+            this.props.requestOnePokemon(this.props.match.params.pokemonId)        
+        }
     }
     
     render(){
@@ -13,6 +23,7 @@ class PokemonDetail extends React.Component{
         }
         return(
             <section className="pokemon-detail">
+                
                 <figure>
                     <img src={pokemon.imageUrl}/>
                 </figure>
