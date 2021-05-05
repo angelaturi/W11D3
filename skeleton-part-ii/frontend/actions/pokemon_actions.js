@@ -18,7 +18,7 @@ export const receiveOnePokemon = (payload) => ({
   payload
 });
 
-export const requestOnePokemon = (pokemonId) => (dispatch) => (
-  APIUtil.fetchOnePokemon(pokemonId)
+export const requestOnePokemon = (id) => (dispatch) => (
+  APIUtil.fetchOnePokemon(id)
     .then(pokemon => dispatch(receiveOnePokemon(pokemon)))
 );
