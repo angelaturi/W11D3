@@ -21,7 +21,7 @@ import { Link } from "react-router-dom";
 const PokemonIndexItem = ({pokemon}) => {
     // debugger
     return (
-        <li>
+        <li key={pokemon.id}>
             <Link to={`/pokemon/${pokemon.id}`}>
                 <img src={pokemon.imageUrl}/>
                 <span>{pokemon.name}</span>

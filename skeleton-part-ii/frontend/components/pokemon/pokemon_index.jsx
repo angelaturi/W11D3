@@ -28,7 +28,7 @@ class PokemonIndex extends React.Component{
       <Route path="/pokemon/:pokemonId" component={PokemonDetailContainer}/>
       <ul>
         {this.props.pokemon.map(poke => (
-          <PokemonIndexItem key={poke.id} pokemon={poke} />          
+          <li key={poke.id}><PokemonIndexItem pokemon={poke} />  </li>        
         ))}
       {/* {this.props.pokemon.map((poke) => (
         <li className="pokemon-index-item">
